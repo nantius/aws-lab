@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "tsc": "tsc",
+    "build": "node build.js",
+    "prepare": "npm run tsc && npm run build",
+    "deploy": "npm run prepare && cdk deploy",
     "synth": "cdk synth",
-    "deploy": "cdk deploy",
     "bootstrap": "cdk bootstrap",
     "destroy": "cdk destroy",
     "diff": "cdk diff"
@@ -14,12 +16,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "aws-cdk-lib": "^2.219.0",
     "constructs": "^10.4.2"
   },
   "devDependencies": {
+    "esbuild": "^0.25.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
