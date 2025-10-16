@@ -5,23 +5,23 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "build": "node build.js",
-    "prepare": "npm run tsc && npm run build",
-    "deploy": "npm run prepare && cdk deploy",
+    "deploy": "npm run tsc && cdk deploy",
+    "deploy-all": "npm run tsc && cdk deploy --all",
     "synth": "cdk synth",
     "bootstrap": "cdk bootstrap",
     "destroy": "cdk destroy",
+    "destroy-all": "cdk destroy --all",
     "diff": "cdk diff"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.901.0",
     "aws-cdk-lib": "^2.219.0",
     "constructs": "^10.4.2"
   },
   "devDependencies": {
-    "esbuild": "^0.25.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
